@@ -1,0 +1,24 @@
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp org/xml/ns/persistence/persistence_2_1.xsd"
+
+             version="2.1">
+	<persistence-unit name="Simplest" transaction-type="RESOURCE_LOCAL">
+		<!-- Hibernate JPA persistence provider -->
+        <provider>org.apache.openjpa.persistence.PersistenceProviderImpl</provider>
+
+		<class>com.example.Customer</class>
+		<class>com.example.Service</class>
+		<class>com.example.ServicesPK</class>
+		<!-- other properties -->
+		<properties>
+			<!-- Do not use in production, this will generate a lot of output. -->
+            <property name="openjpa.Log" value="SQL=TRACE"/>
+            <property name="openjpa.RuntimeUnenhancedClasses" value="supported"/>
+
+            <property name="openjpa.ConnectionDriverName" value="oracle.jdbc.driver.OracleDriver" />
+            <property name="openjpa.ConnectionURL" value="jdbc:oracle:thin:@//localhost:1521/XE " />
+            <property name="openjpa.ConnectionUserName" value="sample" />
+            <property name="openjpa.ConnectionPassword" value="root" />
+		</properties>
+	</persistence-unit>
+</persistence>
