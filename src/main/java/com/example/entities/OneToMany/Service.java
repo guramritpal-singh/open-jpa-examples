@@ -1,4 +1,4 @@
-package com.example;
+package com.example.entities.OneToMany;
 
 import java.util.Date;
 
